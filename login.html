@@ -1,0 +1,64 @@
+Here is an example of a simple login page that checks the correctness of the login and password using HTML, CSS, and JavaScript:
+
+**HTML:**
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 40px auto;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Login Page</h2>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button class="button" type="submit">Login</button>
+    </form>
+    <div id="error-message"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+In this example, we have a simple HTML form with input fields for username and password. When the user submits the form, the JavaScript code checks if the username is "admin" and the password is "password". If both are correct, an alert box pops up saying "Login successful!" and the page redirects to another page (in this case, `index.html`). If the username or password is incorrect, an error message is displayed below the form.
+
+Please note that in a real-world application, you would want to handle user authentication more securely by storing users' credentials in a database or using a secure authentication library. This example is just for demonstration purposes.
