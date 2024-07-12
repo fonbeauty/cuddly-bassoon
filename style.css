@@ -1,5 +1,5 @@
 /* Add some basic styling to our form */
-body {
+.login_body {
     max-width: 400px;
     margin: 40px auto;
     padding: 20px;
@@ -8,8 +8,17 @@ body {
     border-radius: 5px;
 }
 
+body {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
 .container {
-    width: 300px;
+    width: 80%;
     margin: 40px auto;
     /* background-color: #f0f0f0; */
     padding: 20px;
@@ -37,6 +46,15 @@ input {
     border-radius: 5px;
 }
 
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
 button {
     background-color: #4CAF50;
     color: #fff;
@@ -44,11 +62,11 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 150px;
+    width: 60%;
+    max-width: 200px;
 }
 
 button:hover {
@@ -57,9 +75,30 @@ button:hover {
 
 h2 {
     margin-top: 0px;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-p {
+.center__p {
     text-align: center;
+}
+
+.agree__label {
+    display: inline;
+    vertical-align: middle;
+}
+
+.agree__div {
+    margin-bottom: 20px;
+    /* display: block;
+    padding: 1em;
+    margin: 2em;
+    border: 3px solid #ddd;
+    background-color: #eee;
+    max-width: 800px;
+    vertical-align: baseline; */
+}
+
+p {
+    text-align: justify;
 }

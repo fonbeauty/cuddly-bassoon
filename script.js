@@ -16,3 +16,8 @@ loginForm.addEventListener('submit', (e) => {
 		errorMessageDiv.textContent = 'Invalid username or password';
 	}
 });
+
+
+function closeWin() {
+	window.close()
+}
