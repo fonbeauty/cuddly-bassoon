@@ -4,6 +4,34 @@ const usernameInput = document.getElementById('username');
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const confirmPasswordInput = document.getElementById('confirm-password');
+const togglePassword = document.getElementById("togglePassword");
+const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+const password = document.getElementById('password')
+const confirmPassword = document.getElementById('confirm-password')
+
+
+togglePassword.addEventListener("click", function () {
+    // toggle the type attribute
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    // toggle the icon
+    this.classList.toggle("bi-eye");
+});
+
+
+toggleConfirmPassword.addEventListener("click", function () {
+    // toggle the type attribute
+    const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
+    confirmPassword.setAttribute("type", type);
+    // toggle the icon
+    this.classList.toggle("bi-eye");
+});
+// prevent form submit
+// const form = document.querySelector("form");
+// form.addEventListener('submit', function (e) {
+//     e.preventDefault();
+// });
+
 
 // Store entered data in local storage
 form.addEventListener('submit', (e) => {
