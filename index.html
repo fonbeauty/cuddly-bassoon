@@ -2,39 +2,40 @@
 <html>
 <head>
     <title>Login Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 300px;
-            margin: 40px auto;
-            background-color: #f0f0f0;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-        }
-        .button {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #3e8e41;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <!--    <style>-->
+    <!--        body {-->
+    <!--            font-family: Arial, sans-serif;-->
+    <!--        }-->
+    <!--        .container {-->
+    <!--            width: 300px;-->
+    <!--            margin: 40px auto;-->
+    <!--            background-color: #f0f0f0;-->
+    <!--            padding: 20px;-->
+    <!--            border: 1px solid #ccc;-->
+    <!--            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);-->
+    <!--        }-->
+    <!--        label {-->
+    <!--            display: block;-->
+    <!--            margin-bottom: 10px;-->
+    <!--        }-->
+    <!--        input[type="text"], input[type="password"] {-->
+    <!--            width: 100%;-->
+    <!--            padding: 10px;-->
+    <!--            margin-bottom: 20px;-->
+    <!--            border: 1px solid #ccc;-->
+    <!--        }-->
+    <!--        .button {-->
+    <!--            background-color: #4CAF50;-->
+    <!--            color: #fff;-->
+    <!--            padding: 10px 20px;-->
+    <!--            border: none;-->
+    <!--            cursor: pointer;-->
+    <!--        }-->
+    <!--        .button:hover {-->
+    <!--            background-color: #3e8e41;-->
+    <!--        }-->
+    <!--    </style>-->
 </head>
 <body>
 <div class="container">
@@ -47,7 +48,12 @@
         <input type="password" id="password" name="password">
         <br>
         <button class="button" type="submit">Login</button>
+
     </form>
+    <p>
+        Have no account?
+        <a href="register.html">Sign up!</a>
+    </p>
     <div id="error-message"></div>
 </div>
 
