@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Login Page</title>
+    <title>Cuddly Bassoon/</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--    <style>-->
     <!--        body {-->
     <!--            font-family: Arial, sans-serif;-->
@@ -37,27 +39,29 @@
     <!--        }-->
     <!--    </style>-->
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
 
-    <form id="login-form">
-        <h2>Login Page</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <br>
-        <button class="button" type="submit">Login</button>
+        <form id="login-form">
+            <h2>Cuddly Bassoon</h2>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button class="button" type="submit">Login</button>
 
-    </form>
-    <p>
-        Have no account?
-        <a href="register.html">Sign up!</a>
-    </p>
-    <div id="error-message"></div>
-</div>
+        </form>
+        <p>
+            Have no account?
+            <a href="register.html">Sign up!</a>
+        </p>
+        <p id="error-message" class=errormessege> </p>
+    </div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
