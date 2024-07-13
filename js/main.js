@@ -26,8 +26,14 @@ document.getElementById('add-task-btn').addEventListener('click', () => {
     });
 
     // Вставляем поля ввода и кнопку сохранения в страницу
-    document.getElementById('new-row').appendChild(taskInput);
-    document.getElementById('new-row').appendChild(saveTaskBtn);
+    tbodyRef = document.getElementById('task-list')
+    newRow = tbodyRef.insertRow()
+    var newText = document.createTextNode('*');
+    newRow.insertCell().appendChild(newText)
+    newRow.insertCell().appendChild(taskInput)
+    newRow.insertCell().appendChild(saveTaskBtn)
+    // document.getElementById('new-row').appendChild(taskInput);
+    // document.getElementById('new-row').appendChild(saveTaskBtn);
 });
 
 // Обновляем DOM-страницу с задачами
@@ -37,11 +43,16 @@ function updateTaskList() {
     // Цикл по задачам
     tasks.forEach((task) => {
         i += 1
-        let taskHTML = `<tr class="task ${task.completed ? 'completed' : ''}">
-        <td>${i}</td>
-            <td>${task.text}</td>
-            <td><button onclick="completeTask(${tasks.indexOf(task)})">Complete</button>
-            <button onclick="deleteTask(${tasks.indexOf(task)})">Delete</button></td>
+        let taskHTML = `
+        <tr>
+            <td>${i}</td>
+            <td id="input-col" class="task ${task.completed ? 'completed' : ''}" >
+                ${task.text}
+            </td>
+            <td>
+                <button onclick="completeTask(${tasks.indexOf(task)})">Complete</button>
+                <button onclick="deleteTask(${tasks.indexOf(task)})">Delete</button>
+            </td>
         </tr>`;
 
         taskListHTML += taskHTML;

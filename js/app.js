@@ -19,7 +19,14 @@
 // });
 
 
-function closeWin() {
+function closeWindowConfirm() {
+    var answer = window.confirm("Close window?");
+    if (answer) {
+        window.close()
+    }
+}
+
+function closeWindow() {
     window.close()
 }
 

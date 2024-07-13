@@ -1,6 +1,6 @@
 body {
     max-width: 80%;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -11,26 +11,25 @@ body {
 #task-list {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
-.task {
+/* .task {
     padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
 .task:last-child {
     border-bottom: none;
-}
+} */
 
 .completed {
     text-decoration: line-through;
 }
 
 input {
-    /* width: 60%; */
+    width: 100%;
     height: 40px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     padding: 10px;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -66,9 +65,29 @@ h2 {
     text-align: center;
 }
 
+.table-container {
+    margin: 30px auto;
+    display: block;
+    min-width: 10%
+}
+
 td {
     /* max-width: 80%; */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 40px;
+}
+
+#input-col {
+    min-width: 184px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.displayBlock {
+    display: block
 }

@@ -23,11 +23,11 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if (username.value === 'admin' && password.value === 'admin') {
-        window.open("admin.html"); // redirect to another page
+        openWindow("admin.html"); // redirect to another page
     }
     else if (username.value === 'user' && password.value === 'user') {
         // alert('Login successful!');
-        window.open("main.html"); // redirect to another page
+        openWindow("main.html"); // redirect to another page
     } else {
         errorMessageDiv.style.color = "red"
         errorMessageDiv.textContent = 'Invalid username or password';
@@ -35,12 +35,12 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 
-let openedWindow;
 
-function openWindow() {
-    openedWindow = window.open("admin.html");
+function openWindow(page) {
+    openedWindow = window.open(page);
+    return openWindow
 }
 
-function closeOpenedWindow() {
-    openedWindow.close();
+function closeOpenedWindow(window_to_close) {
+    window_to_close.close();
 }

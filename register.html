@@ -9,37 +9,39 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class=login_body>
-    <div class="container">
-        <h2>Registration Form</h2>
-        <form id="registration-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+<body>
+    <div class=login-registration-form>
+        <div class="container">
+            <h2>Registration Form</h2>
+            <form id="registration-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <i class="bi bi-eye-slash" id="togglePassword"></i>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
 
-            <label for="confirm-password">Confirm password:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-            <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
+                <label for="confirm-password">Confirm password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <i class="bi bi-eye-slash" id="toggleConfirmPassword"></i>
 
-            <div class="agree__div">
-                <input type="checkbox" id="agree" required>
-                <label for="agree" class=agree__label>I agree to these <a href=terms_and_conditions.html
-                        target=”_blank”>Terms and Conditions</a></label>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-        <p class="center__p">
-            Already have an account?
-            <a href="index.html">Sign in!</a>
-        </p>
+                <div class="agree__div">
+                    <input type="checkbox" id="agree" required>
+                    <label for="agree" class=agree__label>I agree to these <a href=terms_and_conditions.html
+                            target=”_blank”>Terms and Conditions</a></label>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p class="center__p">
+                Already have an account?
+                <a href="index.html">Sign in!</a>
+            </p>
+        </div>
+        <script src="js/register.js"></script>
     </div>
-    <script src="js/register.js"></script>
 </body>
 
 </html>
