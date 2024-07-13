@@ -22,10 +22,12 @@ form.addEventListener('submit', function (e) {
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    if ((username.value === 'admin' && password.value === 'admin')
-        || (username.value === 'user' && password.value === 'user')) {
-        alert('Login successful!');
-        location.href = 'index.html'; // redirect to another page
+    if (username.value === 'admin' && password.value === 'admin') {
+        window.open("admin.html"); // redirect to another page
+    }
+    else if (username.value === 'user' && password.value === 'user') {
+        // alert('Login successful!');
+        window.open("main.html"); // redirect to another page
     } else {
         errorMessageDiv.style.color = "red"
         errorMessageDiv.textContent = 'Invalid username or password';
@@ -33,6 +35,12 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 
-function closeWin() {
-    window.close()
+let openedWindow;
+
+function openWindow() {
+    openedWindow = window.open("admin.html");
+}
+
+function closeOpenedWindow() {
+    openedWindow.close();
 }

@@ -22,3 +22,5 @@
 function closeWin() {
     window.close()
 }
+
+

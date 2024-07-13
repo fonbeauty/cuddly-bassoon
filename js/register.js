@@ -12,8 +12,10 @@ const confirmPassword = document.getElementById('confirm-password')
 
 togglePassword.addEventListener("click", function () {
     // toggle the type attribute
-    const type = password.getAttribute("type") === "password" ? "text" : "password";
-    password.setAttribute("type", type);
+    const type_password = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type_password);
+    const type_confirmPassword = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
+    confirmPassword.setAttribute("type", type_confirmPassword);
     // toggle the icon
     this.classList.toggle("bi-eye");
 });
@@ -21,8 +23,10 @@ togglePassword.addEventListener("click", function () {
 
 toggleConfirmPassword.addEventListener("click", function () {
     // toggle the type attribute
-    const type = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
-    confirmPassword.setAttribute("type", type);
+    const type_confirmPassword = confirmPassword.getAttribute("type") === "password" ? "text" : "password";
+    confirmPassword.setAttribute("type", type_confirmPassword);
+    const type_password = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type_password);
     // toggle the icon
     this.classList.toggle("bi-eye");
 });

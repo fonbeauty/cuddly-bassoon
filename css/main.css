@@ -1,0 +1,74 @@
+body {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+input {
+    /* width: 60%; */
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* display: block; */
+
+}
+
+.close__button {
+    width: 60%;
+    max-width: 200px;
+    margin-top: 50px;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+h2 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+td {
+    /* max-width: 80%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

@@ -26,21 +26,23 @@ document.getElementById('add-task-btn').addEventListener('click', () => {
     });
 
     // Вставляем поля ввода и кнопку сохранения в страницу
-    document.getElementById('task-list').appendChild(taskInput);
-    document.getElementById('task-list').appendChild(saveTaskBtn);
+    document.getElementById('new-row').appendChild(taskInput);
+    document.getElementById('new-row').appendChild(saveTaskBtn);
 });
 
 // Обновляем DOM-страницу с задачами
 function updateTaskList() {
     let taskListHTML = '';
-
+    let i = 0
     // Цикл по задачам
     tasks.forEach((task) => {
-        let taskHTML = `<li class="task ${task.completed ? 'completed' : ''}">
-            <span>${task.text}</span>
-            <button onclick="completeTask(${tasks.indexOf(task)})">Complete</button>
-            <button onclick="deleteTask(${tasks.indexOf(task)})">Delete</button>
-        </li>`;
+        i += 1
+        let taskHTML = `<tr class="task ${task.completed ? 'completed' : ''}">
+        <td>${i}</td>
+            <td>${task.text}</td>
+            <td><button onclick="completeTask(${tasks.indexOf(task)})">Complete</button>
+            <button onclick="deleteTask(${tasks.indexOf(task)})">Delete</button></td>
+        </tr>`;
 
         taskListHTML += taskHTML;
     });
