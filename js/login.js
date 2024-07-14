@@ -1,8 +1,9 @@
 const togglePassword = document.getElementById("togglePassword");
 const loginForm = document.getElementById('login-form');
 const errorMessageDiv = document.getElementById('error-message');
-const username = document.getElementById('username')
-const password = document.getElementById('password')
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+const showHelp = document.getElementById("showHelp");
 
 togglePassword.addEventListener("click", function () {
     // toggle the type attribute
@@ -10,6 +11,10 @@ togglePassword.addEventListener("click", function () {
     password.setAttribute("type", type);
     // toggle the icon
     this.classList.toggle("bi-eye");
+});
+
+showHelp.addEventListener("click", function () {
+    showHelpWindow()
 });
 
 // prevent form submit
@@ -43,4 +48,9 @@ function openWindow(page) {
 
 function closeOpenedWindow(window_to_close) {
     window_to_close.close();
+}
+
+
+function showHelpWindow() {
+    alert("test data:\nAdministrator: admin / admin\nUser: user / user");
 }
