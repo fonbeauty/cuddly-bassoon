@@ -3,7 +3,7 @@ const loginForm = document.getElementById('login-form');
 const errorMessageDiv = document.getElementById('error-message');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
-const showHelp = document.getElementById("showHelp");
+// const showHelp = document.getElementById("showHelp");
 
 togglePassword.addEventListener("click", function () {
     // toggle the type attribute
@@ -13,9 +13,9 @@ togglePassword.addEventListener("click", function () {
     this.classList.toggle("bi-eye");
 });
 
-showHelp.addEventListener("click", function () {
-    showHelpWindow()
-});
+// showHelp.addEventListener("click", function () {
+//     showHelpWindow()
+// });
 
 // prevent form submit
 const form = document.querySelector("form");
@@ -51,6 +51,6 @@ function closeOpenedWindow(window_to_close) {
 }
 
 
-function showHelpWindow() {
-    alert("test data:\nAdministrator: admin / admin\nUser: user / user");
-}
+// function showHelpWindow() {
+//     alert("test data:\nAdministrator: admin / admin\nUser: user / user");
+// }

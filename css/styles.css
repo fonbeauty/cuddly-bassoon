@@ -13,6 +13,9 @@ body {
     max-width: 80%;
     margin: 20px auto;
     padding: 20px;
+}
+
+body.frame {
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -121,4 +124,44 @@ footer i {
 
 .right__p {
     text-align: right;
+}
+
+
+[data-title] {
+    position: relative;
+    /* Относительное позиционирование */
+    cursor: help;
+    /* Меняем курсор на справочный */
+}
+
+[data-title]::after {
+    content: attr(data-title);
+    /* Выводим текст из атрибута data-title */
+    position: absolute;
+    /* Абсолютное позиционирование */
+    left: -50px;
+    top: -110px;
+    /* Положение подсказки */
+    opacity: 0;
+    /* Скрываем подсказку, делая её прозрачной */
+    transition: 0.5s;
+    /* Время появления подсказки */
+    pointer-events: none;
+    /* Подсказка не реагирует на курсор */
+    background: white;
+    /* Синий цвет фона */
+    color: black;
+    /* Белый цвет текста */
+    padding: 0.5em;
+    /* Поля вокруг текста */
+    text-align: left;
+    /* background-color: #4CAF50; */
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+[data-title]:hover::after {
+    opacity: 1;
+    /* Показываем подсказку */
 }
