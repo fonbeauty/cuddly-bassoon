@@ -9,17 +9,19 @@ from app.database.engine import delete_tables, create_tables
 from app.database.repository import UserRepository
 from app.routers import login, status, tasks
 
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
 async def lifespan(_: FastAPI):
-    logging.warning("On startup")
+    logger.warning("On startup")
     await delete_tables()
-    logging.warning('Base cleared')
+    logger.warning('Base cleared')
     await create_tables()
     await UserRepository.add_default_users()
-    logging.warning('Admin created')
+    logger.warning('Admin created')
     yield
-    logging.warning("On shutdown")
+    logger.warning("On shutdown")
 
 
 app = FastAPI(lifespan=lifespan)
