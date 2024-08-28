@@ -27,24 +27,24 @@ form.addEventListener('submit', function (e) {
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-//    try {
-//        const userData = login(username.value, password.value);
-//        console.log(userData);
-//    } catch (error) {
-//        console.error('Error logging in:', error);
-//    }
+    try {
+        const userData = login(username.value, password.value);
+        console.log(userData);
+    } catch (error) {
+        console.error('Error logging in:', error);
+    }
 
 
-     if (username.value === 'admin' && password.value === 'admin') {
-         openWindow("admin.html"); // redirect to another page
-     }
-     else if (username.value === 'user' && password.value === 'user') {
-         // alert('Login successful!');
-         openWindow("main.html"); // redirect to another page
-     } else {
-         errorMessageDiv.style.color = "red"
-         errorMessageDiv.textContent = 'Invalid username or password';
-     }
+//     if (username.value === 'admin' && password.value === 'admin') {
+//         openWindow("admin.html"); // redirect to another page
+//     }
+//     else if (username.value === 'user' && password.value === 'user') {
+//         // alert('Login successful!');
+//         openWindow("main.html"); // redirect to another page
+//     } else {
+//         errorMessageDiv.style.color = "red"
+//         errorMessageDiv.textContent = 'Invalid username or password';
+//     }
 });
 
 
@@ -72,7 +72,7 @@ function login(username, password) {
     // sendRequest('GET', 'https://jsonplaceholder.typicode.com/users')
     //     .then(data => console.log(data))
     //     .catch(err => console.log(err))
-    sendRequest('POST', 'http://127.0.0.1:8003/api/login', body)
+    sendRequest('POST', 'http://127.0.0.1:8000/api/login', body)
         .then(data => console.log(data))
         .catch(err => console.log(err))
     // response = sendRequest('POST', 'http://127.0.0.1/api/login')

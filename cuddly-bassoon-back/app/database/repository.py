@@ -1,7 +1,7 @@
 from sqlalchemy import select
 
-from database import new_session, TasksORM, UsersORM
-from schemas import TaskAdd, Task, UserAdd, User
+from app.database.engine import new_session, TasksORM, UsersORM
+from app.models.schemas import TaskAdd, Task, UserAdd, User
 
 
 class TaskRepository:

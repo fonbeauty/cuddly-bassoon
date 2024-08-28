@@ -37,5 +37,5 @@ class UserId(BaseModel):
     user_id: int
 
 class UserLogin(BaseModel):
-    username: str
+    login: str
     password: str
