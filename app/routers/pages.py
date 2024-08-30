@@ -19,9 +19,11 @@ async def register_html(request: Request):
 async def register_html(request: Request):
     return templates.TemplateResponse(name='terms_and_conditions.html', context={'request': request})
 
+
 @router.get('/admin')
 async def register_html(request: Request):
     return templates.TemplateResponse(name='admin.html', context={'request': request})
+
 
 @router.get('/to_do_list')
 async def register_html(request: Request):
