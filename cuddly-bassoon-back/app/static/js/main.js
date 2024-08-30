@@ -8,6 +8,7 @@ document.getElementById('add-task-btn').addEventListener('click', () => {
     taskInput.type = 'text';
     taskInput.placeholder = 'Enter a new task...';
 
+
     // Создаем кнопку сохранения задачи
     let saveTaskBtn = document.createElement('button');
     saveTaskBtn.textContent = 'Save';
