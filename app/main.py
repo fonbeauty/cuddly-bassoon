@@ -8,8 +8,7 @@ from contextlib import asynccontextmanager
 
 from app.database.engine import delete_tables, create_tables
 from app.database.repository import UserRepository
-from app.routers import login, status, tasks
-from app.pages import router
+from app.routers import login, status, tasks, pages
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +26,7 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-app.include_router(router.router)
+app.include_router(pages.router)
 app.include_router(login.router)
 app.include_router(status.router)
 app.include_router(tasks.router)
