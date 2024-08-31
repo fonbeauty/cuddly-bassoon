@@ -36,6 +36,7 @@ class UserId(BaseModel):
     result: str = 'Success'
     user_id: int
 
+
 class UserLogin(BaseModel):
     login: str
     password: str

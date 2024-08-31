@@ -12,12 +12,12 @@ router = APIRouter(prefix='/login', tags=['Логин'])
 #     return users
 
 
-@router.post('')
-async def login(user: UserLogin):
+@router.post('', status_code=200)
+async def login(user: UserLogin) -> dict:
     # Authenticate the user here (e.g., check against a database)
-    if user:
+    if (user.login == 'user' and user.password == 'user') or (user.login == 'admin' and user.password == 'admin'):
         print(user)
-        return {"message": "Login successful"}
+        return {'message': 'login successful'}
     else:
         return {"message": "Invalid username or password"}
 
