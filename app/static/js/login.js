@@ -18,35 +18,15 @@ togglePassword.addEventListener("click", function () {
 // });
 
 // prevent form submit
-const form = document.querySelector("form");
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
-});
+//const form = document.querySelector("form");
+//form.addEventListener('submit', function (e) {
+//    e.preventDefault();
+//});
 
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     login(username.value, password.value);
-
-    // try {
-    //     const userData = login(username.value, password.value);
-    //     console.log(userData);
-    // } catch (error) {
-    //     console.error('Error logging in:', error);
-    // }
-
-
-    //     if (username.value === 'admin' && password.value === 'admin') {
-    //         openWindow("admin.html"); // redirect to another page
-    //     }
-    //     else if (username.value === 'user' && password.value === 'user') {
-    //         // alert('Login successful!');
-    //         openWindow("main.html"); // redirect to another page
-    //     } else {
-    //         errorMessageDiv.style.color = "red"
-    //         errorMessageDiv.textContent = 'Invalid username or password';
-    //     }
 });
 
 
