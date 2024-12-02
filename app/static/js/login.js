@@ -4,13 +4,14 @@ const errorMessageDiv = document.getElementById('error-message');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
 // const showHelp = document.getElementById("showHelp");
+const randomBoolean = () => Math.random() < 0.5;
 
-togglePassword.addEventListener("click", function () {
+togglePassword.addEventListener('click', function () {
     // toggle the type attribute
-    const type = password.getAttribute("type") === "password" ? "text" : "password";
-    password.setAttribute("type", type);
+    const type = randomBoolean() ? 'text' : 'password';
+    password.setAttribute('type', type);
     // toggle the icon
-    this.classList.toggle("bi-eye");
+    this.classList.toggle('bi-eye');
 });
 
 // showHelp.addEventListener("click", function () {
@@ -49,8 +50,8 @@ function login(username, password) {
 
     sendRequest('POST', '/login', body)
         .then(data => {
-            console.log(data)
-            if (data.message == 'login successful') {
+            console.log(data);
+            if (data.status == 200) {
                 if (body.login == 'user') {
                     window.location.href = '/pages/to_do_list';
                 }
@@ -59,11 +60,17 @@ function login(username, password) {
                 }
             }
             else {
-                errorMessageDiv.style.color = "red";
-                errorMessageDiv.textContent = 'Invalid username or password';
+                // TO DO необходимо добавить обработку ошибки от бека
+                // errorMessageDiv.style.color = 'red';
+                // errorMessageDiv.textContent = 'Invalid username or password';
             }
         })
-        .catch(err => console.log(err))
+    // .catch(err => {
+    //     console.log(err);
+    //     // errorMessageDiv.style.color = 'red';
+    //     // errorMessageDiv.textContent = 'Invalid username or password';
+    // }
+    // )
 }
 
 function sendRequest(method, url, body = null) {
@@ -75,15 +82,16 @@ function sendRequest(method, url, body = null) {
         body: JSON.stringify(body),
         headers: headers
     }).then(response => {
-        if (response.ok) {
-            return response.json()
-        }
+        return response
+        // if (response.ok) {
+        //     return response
+        // }
 
-        return response.json().then(error => {
-            const e = new Error('Что-то пошло не так')
-            e.data = error
-            throw e
-        })
+        // return response.json().then(error => {
+        //     const e = new Error('Что-то пошло не так')
+        //     e.data = error
+        //     throw e
+        // })
     })
 }
 
