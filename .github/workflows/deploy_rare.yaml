@@ -1,0 +1,21 @@
+name: deploy_rare
+on:
+  push:
+    branches:
+      - rare
+jobs:
+  checkout:
+    runs-on: Linux
+    steps:
+      - uses: actions/checkout@v3
+  deploy:
+    runs-on: Linux
+    needs: checkout
+    steps:
+      - name: deploy
+        env:
+          SERVICE_PORT: 10081
+        run: |
+         docker-compose pull
+         docker-compose up -d --build --force-recreate
+         docker image prune -f
