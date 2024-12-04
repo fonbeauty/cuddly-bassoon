@@ -1,14 +1,11 @@
-FROM python:3.9-slim
+FROM python:3.10
 
-WORKDIR /app
+WORKDIR /code
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 
-COPY app ./
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-# Expose the port your app runs on
-EXPOSE 8000
+COPY ./app /code/app
 
-# Run the application
-CMD ["python", "main.py"]
+CMD ["fastapi", "run", "app/main.py", "--host", "0.0.0.0", "--port", "80"]
