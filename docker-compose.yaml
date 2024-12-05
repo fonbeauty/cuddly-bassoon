@@ -5,4 +5,6 @@ services:
     build: .
     ports:
       - "${SERVICE_PORT}:8000"
+    labels:
+      - "logs=true"
     restart: unless-stopped
