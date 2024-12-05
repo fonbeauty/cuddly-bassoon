@@ -16,6 +16,4 @@ jobs:
         env:
           SERVICE_PORT: 10081
         run: |
-         docker-compose pull
-         docker-compose up -d --build --force-recreate
-         docker image prune -f
+         docker-compose -p cb_rare up -d --build --force-recreate
