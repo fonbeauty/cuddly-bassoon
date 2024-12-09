@@ -50,7 +50,7 @@ function login(username, password) {
     sendRequest('POST', '/login', body)
         .then(data => {
             console.log(data)
-            if (data.message == 'login successful') {
+            if (data.status == 200) {
                 if (body.login == 'user') {
                     window.location.href = '/pages/to_do_list';
                 }
@@ -75,15 +75,16 @@ function sendRequest(method, url, body = null) {
         body: JSON.stringify(body),
         headers: headers
     }).then(response => {
-        if (response.ok) {
-            return response.json()
-        }
-
-        return response.json().then(error => {
-            const e = new Error('Что-то пошло не так')
-            e.data = error
-            throw e
-        })
+        return response
+        //        if (response.ok) {
+        //            return response.json()
+        //        }
+        //
+        //        return response.json().then(error => {
+        //            const e = new Error('Что-то пошло не так')
+        //            e.data = error
+        //            throw e
+        //        })e
     })
 }
 
