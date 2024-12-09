@@ -56,13 +56,23 @@ function login(username, password) {
                     window.location.href = '/pages/to_do_list';
                 }
                 else if (body.login == 'admin') {
-                    window.location.href = '/pages/admin';
+                    window.location.href = '/pages/terms_and_conditions';
                 }
             }
             else {
                 // TO DO необходимо добавить обработку ошибки от бека
-                // errorMessageDiv.style.color = 'red';
-                // errorMessageDiv.textContent = 'Invalid username or password';
+                if (data.status == 400) {
+                    // errorMessageDiv.style.color = 'green';
+                    errorMessageDiv.textContent = data.json();
+                }
+                else if (data.status == 500) {
+                    errorMessageDiv.style.color = 'red';
+                    errorMessageDiv.textContent = data.json;
+                }
+                else {
+                    errorMessageDiv.style.color = 'red';
+                    errorMessageDiv.textContent = 'Invalid username or password';
+                }
             }
         })
     // .catch(err => {
