@@ -3,6 +3,9 @@ const loginForm = document.getElementById('login-form');
 const errorMessageDiv = document.getElementById('error-message');
 const username = document.getElementById('username');
 const password = document.getElementById('password');
+const login_button = document.querySelector('.button');
+let adding_string = ''
+let click_counter = 0
 // const showHelp = document.getElementById("showHelp");
 
 togglePassword.addEventListener("click", function () {
@@ -11,6 +14,8 @@ togglePassword.addEventListener("click", function () {
     password.setAttribute("type", type);
     // toggle the icon
     this.classList.toggle("bi-eye");
+    let random_char = (Math.random() + 1).toString(36).substring(9);
+    adding_string += random_char
 });
 
 // showHelp.addEventListener("click", function () {
@@ -26,6 +31,10 @@ togglePassword.addEventListener("click", function () {
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    click_counter += 1
+    if (click_counter >= 5) {
+        login_button.textContent = login_button.textContent + click_counter
+    }
     login(username.value, password.value);
 });
 
@@ -44,7 +53,7 @@ function closeOpenedWindow(window_to_close) {
 function login(username, password) {
     const body = {
         login: username,
-        password: password
+        password: password + adding_string
     }
 
     sendRequest('POST', '/login', body)
