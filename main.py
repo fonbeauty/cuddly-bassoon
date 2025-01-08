@@ -31,7 +31,7 @@ app.include_router(login.router)
 app.include_router(status.router)
 app.include_router(tasks.router)
 
-app.mount('/static', StaticFiles(directory='static'), 'static')
+app.mount('/static', StaticFiles(directory='app/static'), 'static')
 
 if __name__ == '__main__':
     uvicorn.run(app, host="127.0.0.1", port=8000)
