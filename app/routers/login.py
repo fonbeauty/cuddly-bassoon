@@ -15,7 +15,7 @@ router = APIRouter(prefix='/login', tags=['Логин'])
 @router.post('', status_code=200)
 async def login(user: UserLogin, response: Response) -> dict:
     # Authenticate the user here (e.g., check against a database)
-    if (user.login == 'user' and user.password == 'user') or (user.login == 'admin' and user.password == 'admin'):
+    if ('user' in user.login and user.password == 'user') or ('admin' in user.login and user.password == 'admin'):
         print(user)
         return {'message': 'login successful'}
     else:

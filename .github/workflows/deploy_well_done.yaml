@@ -1,0 +1,19 @@
+name: deploy_welldone
+on:
+  push:
+    branches:
+      - well_done
+jobs:
+  checkout:
+    runs-on: Linux
+    steps:
+      - uses: actions/checkout@v3
+  deploy:
+    runs-on: Linux
+    needs: checkout
+    steps:
+      - name: deploy
+        env:
+          SERVICE_PORT: 10082
+        run: |
+         docker-compose -p cb_welldone up -d --build --force-recreate
