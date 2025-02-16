@@ -69,7 +69,7 @@ function login(username, password) {
             }
             else {
                 errorMessageDiv.style.color = "red";
-                errorMessageDiv.textContent = 'Invalid username or password';
+                errorMessageDiv.textContent = 'Invalid login or password';
             }
         })
         .catch(err => console.log(err))
