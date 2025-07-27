@@ -11,7 +11,7 @@ async def info():
     body = {
         'message_for_user': 'Glad to see you :)',
         'application_name': 'Cuddly Bassoon',
-        'version': 'rare_1.1'
+        'version': 'rare_1.2'
     }
     logger.info(f'Status endpoint accessed. Body: {body}')
     return body
