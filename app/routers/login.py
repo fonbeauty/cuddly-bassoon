@@ -22,15 +22,15 @@ async def login(user: UserLogin, response: Response) -> dict:
     if len(user.login) >= 1000:
         response.status_code = 400
         msg = {'result': '400', 'message': 'box.error.NO_SUCH_INDEX Critical Database error'}
-        logger.error(f'Requested user {user.login} login failed. Login too long.'
+        logger.error(f'Requested user {user.login} login failed. Login too long. Database error.'
                      f'\n {response.status_code} {msg}')
         return msg
     if len(user.password) >= 1000:
         response.status_code = 400
         msg = {'result': '400',
                'message': 'Critical server error. System crash [CRITICAL] WORKER TIMEOUT (pid:44)'}
-        logger.error(f'Requested user {user.login} login failed. Password too long: {user.password}'
-                     f'\n {response.status_code} {msg}')
+        logger.error(f'Requested user {user.login} login failed. Password too long: {user.password}.'
+                     f' Server critical error. \n {response.status_code} {msg}')
         return msg
 
     if (user.login == 'user' and user.password == 'user') or (user.login == 'admin' and user.password == 'admin'):
@@ -52,12 +52,13 @@ async def login(user: UserLogin, response: Response) -> dict:
         response.status_code = 200
         logger.info(f'Requested user login. User {user.login} login successfully')
         logger.info(f'Executing SQL command "DROP TABLE User"')
-        logger.info(f'SQL command "DROP TABLE User" completed successfully')
+        logger.info(f'SQL command "DROP TABLE User" completed successfully. Table User deleted.')
         return {'result': '200', 'message': 'Users table deleted successfully'}
     else:
         response.status_code = 500
-        logger.error(f'Requested user {user.login} login failed. Database not respond')
-        return {'result': '400', 'message': 'Internal server error'}
+        msg = {'result': '400', 'message': 'Internal server error'}
+        logger.error(f'Requested user {user.login} login failed. Database not respond. {msg}')
+        return msg
 
 
 @router.post('/registration')
