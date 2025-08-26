@@ -1,16 +1,15 @@
-import logging
-
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from contextlib import asynccontextmanager
 
+from app.common.logging_config import produce_logger
 from app.database.engine import delete_tables, create_tables
 from app.database.repository import UserRepository
-from app.routers import login, status, tasks, pages
+from app.routers import login, status, tasks, pages, requirements
 
-logger = logging.getLogger(__name__)
+logger = produce_logger(__name__)
 
 
 @asynccontextmanager
@@ -30,6 +29,7 @@ app.include_router(pages.router)
 app.include_router(login.router)
 app.include_router(status.router)
 app.include_router(tasks.router)
+app.include_router(requirements.router)
 
 app.mount('/static', StaticFiles(directory='app/static'), 'static')
 
